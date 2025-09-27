@@ -1,0 +1,3 @@
+[submodule "unicore-frontend"]
+	path = unicore-frontend
+	url = https://github.com/Anantdadhich/unicore-frontend.git
