@@ -1,5 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "@nomicfoundation/hardhat-ignition-ethers";
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -17,26 +18,36 @@ const config: HardhatUserConfig = {
       url: process.env.ETHEREUM_RPC_URL || "https://eth.llamarpc.com",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 1,
+      gas: "auto",
+      gasPrice: "auto",
     },
     polygon: {
       url: process.env.POLYGON_RPC_URL || "https://polygon.llamarpc.com",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 137,
+      gas: "auto",
+      gasPrice: "auto",
     },
     base: {
       url: process.env.BASE_RPC_URL || "https://base.llamarpc.com",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 8453,
+      gas: "auto",
+      gasPrice: "auto",
     },
     arbitrum: {
       url: process.env.ARBITRUM_RPC_URL || "https://arbitrum.llamarpc.com",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 42161,
+      gas: "auto",
+      gasPrice: "auto",
     },
     optimism: {
       url: process.env.OPTIMISM_RPC_URL || "https://optimism.llamarpc.com",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 10,
+      gas: "auto",
+      gasPrice: "auto",
     },
     
     // Testnets
@@ -44,26 +55,36 @@ const config: HardhatUserConfig = {
       url: process.env.SEPOLIA_RPC_URL || "https://sepolia.llamarpc.com",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 11155111,
+      gas: "auto",
+      gasPrice: "auto",
     },
     polygonMumbai: {
       url: process.env.MUMBAI_RPC_URL || "https://polygon-mumbai.llamarpc.com",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 80001,
+      gas: "auto",
+      gasPrice: "auto",
     },
     baseSepolia: {
       url: process.env.BASE_SEPOLIA_RPC_URL || "https://base-sepolia.llamarpc.com",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 84532,
+      gas: "auto",
+      gasPrice: "auto",
     },
     arbitrumSepolia: {
       url: process.env.ARBITRUM_SEPOLIA_RPC_URL || "https://sepolia-rollup.arbitrum.io/rpc",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 421614,
+      gas: "auto",
+      gasPrice: "auto",
     },
     optimismSepolia: {
       url: process.env.OPTIMISM_SEPOLIA_RPC_URL || "https://sepolia.optimism.io",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 11155420,
+      gas: "auto",
+      gasPrice: "auto",
     },
   },
   
@@ -112,6 +133,24 @@ const config: HardhatUserConfig = {
   typechain: {
     outDir: "typechain-types",
     target: "ethers-v6",
+  },
+  
+  // Test configuration
+  mocha: {
+    timeout: 40000,
+  },
+  
+  // Gas reporter configuration
+  gasReporter: {
+    enabled: process.env.REPORT_GAS !== undefined,
+    currency: "USD",
+    gasPrice: 20,
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+  },
+  
+  // Coverage configuration
+  solidityCoverage: {
+    enabled: process.env.COVERAGE !== undefined,
   },
 };
 
