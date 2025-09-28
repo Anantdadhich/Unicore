@@ -232,51 +232,10 @@ This tests:
 - 🔄 **External Audit** - Scheduled for Q1 2025
 - ✅ **Testing** - Comprehensive test coverage
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-### Development Workflow
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
-
-### Code Standards
-- **TypeScript** for type safety
-- **ESLint** for code quality
-- **Prettier** for code formatting
-- **Conventional Commits** for commit messages
-
-## 📚 Documentation
-
-- [Protocol Documentation](docs/protocol.md)
-- [API Reference](docs/api.md)
-- [Smart Contract Guide](docs/contracts.md)
-- [Deployment Guide](docs/deployment.md)
-
-## 🐛 Bug Reports
-
-Found a bug? Please report it in our [Issues](https://github.com/your-org/unicore-protocol/issues) section.
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- **LayerZero** for cross-chain messaging
-- **1inch** for DEX aggregation
-- **OpenZeppelin** for secure smart contract libraries
-- **TensorFlow.js** for AI optimization
-- **snarkjs** for zero-knowledge proofs
-
-## 📞 Support
-
-- **Discord** - [Join our community](https://discord.gg/unicore)
-- **Twitter** - [@UniCoreProtocol](https://twitter.com/UniCoreProtocol)
-- **Email** - support@unicore.protocol
 
 ---
 
